@@ -1,2 +1,2 @@
-# Adaptive-Dual-Axis-Style-based-Recalibration-Network
-Adaptive Dual-Axis Style-based Recalibration Network with Class-Wise Statistics Loss for Imbalanced Medical Image Classification
+# Adaptive Dual-Axis Style-based Recalibration Network with Class-Wise Statistics Loss for Imbalanced Medical Image Classification (TIP)
+#### This is the code repository of the paper "Adaptive Dual-Axis Style-based Recalibration Network with Class-Wise Statistics Loss for Imbalanced Medical Image Classification".
