@@ -98,13 +98,11 @@ def save_checkpoint(model, acc, epoch):
 
 
 def adjust_learning_rate(optimizer, epoch):
-    """decrease the learning rate at 100 and 150 epoch"""
     lr = basic_learning_rate
-    if epoch <= 9:
-        # warm-up training for large minibatch
-        lr = basic_learning_rate + basic_learning_rate * epoch / 10.
-    if epoch >= 100 and epoch % 10 == 0:
-        lr /= 10
+    if epoch % 20 == 0:
+        lr /= 5
+    if epoch > 100:
+        lr = 0.00035
     for param_group in optimizer.param_groups:
         param_group['lr'] = lr
 
@@ -486,7 +484,6 @@ def main():
 
     for epoch in range(start_epoch, epochs):
         adjust_learning_rate(optimizer, epoch)
-        # complement_adjust_learning_rate(complement_optimizer, epoch)
         train_loss, train_acc = train(model, train_loader, epoch, criterion, optimizer)
         valid_loss, valid_acc = valid(model, test_loader, test_loader, epoch, criterion)
         with open(log_file, 'a') as f:

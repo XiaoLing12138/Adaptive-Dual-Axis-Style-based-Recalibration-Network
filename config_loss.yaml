@@ -1,11 +1,11 @@
 train:
   size: 224
-  cuda: 7
+  cuda: 
   resume: False
   pretrain: True
   mixed_loss: False
   seed: 34718
-  lr: 0.001
+  lr: 0.002
   batch-size: 32
   img_num: 128
   epochs: 150
